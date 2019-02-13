@@ -1,0 +1,6 @@
+<% puts "process number: #{ENV['TEST_ENV_NUMBER'].inspect}" %>
+<% process_number = ENV['TEST_ENV_NUMBER']  %>
+
+common: -r features
+default: -p common
+parallel: -p common --format pretty -o reports/part_<%= process_number %>.txt
